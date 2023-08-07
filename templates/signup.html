@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="{% static 'signup.js' %}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Sign Up</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    {{ profile_form.full_name }}
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" name="user_name" id="user_name" placeholder="Enter your username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    <i class="material-icons visibility" onclick="show()">visibility</i>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    {{ profile_form.phone_no }}
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    {{ profile_form.address }}
+                </div>
+                <div class="button">
+                    <input type="submit" value="Create Your Account">
+                </div>
+                <p> <a href="login/">Already have an account? Click Here to Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>

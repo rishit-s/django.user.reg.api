@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'usercreated.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="container">
+        {% csrf_token %}
+        <div class="title">
+            User successfully created!
+        </div>
+        <br>
+        <a href="login/">Click here to login and proceed.</a>
+    </div>
+</body>
